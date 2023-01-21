@@ -1,0 +1,52 @@
+<body>
+  <div class="parentdiv" >
+    <div class ="seconddiv" >
+    <table [border]="1" >
+        <tr>
+            <th>E/M</th>
+            <th>JAN</th>
+            <th>FEB</th>
+            <th>MAR</th>
+            <th>APR</th>
+            <th>MAY</th>
+          </tr>
+    
+          <tr *ngFor="let emp of listofemployees; let i = index" >
+            <td  (click)="nameclicked(i)">
+              <div *ngIf="i !=lastposition">{{emp.empname}}</div>
+              <div *ngIf="i==lastposition"> <input type="text"class="form-control" name="name" [(ngModel)]="emp.empname" /> </div>
+            </td>
+            <td>
+              <div *ngIf="i !=lastposition">{{emp.jan}}</div>
+              <div *ngIf="i==lastposition"> <input type="text" (keypress)="allowonlunumbers($event)" class="form-control" name="name" [(ngModel)]="emp.jan" /> </div>
+            </td>
+            <td><div *ngIf="i !=lastposition">{{emp.feb}}</div>
+              <div *ngIf="i==lastposition"> <input type="text" (keypress)="allowonlunumbers($event)"  class="form-control" name="name" [(ngModel)]="emp.feb" /> </div>
+            </td>
+            <td><div *ngIf="i !=lastposition">{{emp.mar}}</div>
+              <div *ngIf="i==lastposition"> <input type="text" (keypress)="allowonlunumbers($event)" class="form-control" name="name" [(ngModel)]="emp.mar" /> </div></td>
+            <td><div *ngIf="i !=lastposition">{{emp.apr}}</div>
+              <div *ngIf="i==lastposition"> <input type="text" (keypress)="allowonlunumbers($event)" class="form-control" name="name" [(ngModel)]="emp.apr" /> </div></td>
+            <td><div *ngIf="i !=lastposition">{{emp.may}}</div>
+              <div *ngIf="i==lastposition"> <input type="text" (keypress)="allowonlunumbers($event)" class="form-control" name="name" [(ngModel)]="emp.may" /> </div></td>
+          </tr>
+    
+    
+    </table>
+   
+    </div>
+    
+  </div>
+  <div class="btndiv"> 
+    <button (click)="Add()" class="btn"><i class="fa-solid fa-plus"></i> Add </button>
+  </div>
+</body>
+
+   
+    <app-chart [list]="listofemp_chart" height="60%"> </app-chart>
+
+    <button class="reload_btn" (click)="reloademployees()"> reload</button>
+
+    
+    
+    

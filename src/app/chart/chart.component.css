@@ -1,0 +1,34 @@
+.div1{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    
+}
+.canvasdiv{
+    margin-top: 50px;
+}
+
+
+@media  only screen and (max-width:700px) {
+    .div1{
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        width: 100%;
+    }
+    .canvas{
+        width: 100%;
+    }
+}
+
+@media  only screen and (max-width:1000px) {
+    .div1{
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        width: 100%;
+    }
+    .canvas{
+        width: 100%;
+    }
+}
